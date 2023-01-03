@@ -9,19 +9,28 @@ const Portfolio = () => {
     const portfolios = [
         {
             id: 1,
-            src: Netflix
+            src: Netflix,
+            demo: "https://netflix-ott-platform.netlify.app",
+            code: "https://github.com/FarhanSyed21/Ott-Platform-Netflix-Clone"
+
         },
         {
             id: 2,
-            src: Blog
+            src: Blog,
+            demo: "https://blog-writing.netlify.app",
+            code: "https://github.com/FarhanSyed21/Blog-App"
         },
         {
             id: 3,
-            src: Downloader
+            src: Downloader,
+            demo: "https://files-downloader.netlify.app",
+            code: "https://github.com/FarhanSyed21/File-Downloader"
         },
         {
             id: 4,
-            src: Word
+            src: Word,
+            demo: "https://dictionary-wordhunt.netlify.app",
+            code: "https://github.com/FarhanSyed21/word-Hunt"
         },
     ]
 
@@ -37,12 +46,16 @@ const Portfolio = () => {
 
             <div className='grid sm:grid-cols-2 md:grid-cols-3 gap-8 px-12 sm:px-0 '>
             {
-                portfolios.map(({ id, src }) => (
+                portfolios.map(({ id, src, demo, code }) => (
                     <div key={id} className='shadow-md shadow-gray-600 rounded-lg'>
                         <img src={src} alt="" className='rounded-md duration-200 hover:scale-105'/>
                         <div className='flex items-center justify-center'>
-                            <button className='w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105'>Demo</button>
-                            <button className='w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105'>Code</button>
+                            <a href={demo}>
+                                <button className='w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105'>Demo</button>
+                            </a>
+                            <a href={code}>
+                                <button className='w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105'>Code</button>    
+                            </a>
                         </div>
                     </div>
                 ))
